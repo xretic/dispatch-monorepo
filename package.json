@@ -2,7 +2,9 @@
   "name": "@dispatch-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+     "dev": "nx run-many --target=serve --projects=api,web --parallel"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/core": "~21.1.0",
