@@ -7,11 +7,18 @@ datasource db {
   provider = "postgresql"
 }
 
+enum STATUS {
+  ERROR
+  WARNING
+  DDOS
+  STABLE
+}
+
 model Site {
   id        String   @id @default(uuid())
   name      String
   city      String
-  status    String
+  status    STATUS
   createdAt DateTime @default(now())
   events    Event[]
 }
@@ -19,9 +26,8 @@ model Site {
 model Event {
   id        String   @id @default(uuid())
   siteId    String
-  type      String
+  type      STATUS
   message   String
-  ack       Boolean  @default(false)
   createdAt DateTime @default(now())
   site      Site     @relation(fields: [siteId], references: [id], onDelete: Cascade)
 }
