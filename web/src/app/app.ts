@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,5 +8,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'Welcome';
+  count = signal(0);
+
+  increment() {
+    this.count.set(this.count() + 1);
+  }
+
+  protected description = 'test';
 }
