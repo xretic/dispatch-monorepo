@@ -1,6 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --soft-color: #374151;
+    --hover-color: 0, 0, 0;
+    --header-bg: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --theme-toggle-color: #1f1f1f;
+}
+
+.dark-theme {
+    --bg-color: #23262c;
+    --text-color: #ffffff;
+    --hover-color: 255, 255, 255;
+    --soft-color: #cfcfcf;
+    --header-bg: #2b2e35;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --theme-toggle-color: #fae04b;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }

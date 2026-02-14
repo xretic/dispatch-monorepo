@@ -7,15 +7,5 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "arrowParens": "always",
-  "printWidth": 100,
-  "plugins": ["prettier-plugin-prisma", "prettier-plugin-organize-attributes"],
-  "overrides": [
-    {
-      "files": ["*.html"],
-      "options": {
-        "parser": "angular"
-      }
-    }
-
-  ]
+  "printWidth": 100
 }
