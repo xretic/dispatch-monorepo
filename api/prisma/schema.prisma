@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -14,20 +14,56 @@ enum STATUS {
   STABLE
 }
 
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String?
+  avatarUrl    String   @default("")
+  username     String
+  githubId     String?  @unique
+  googleId     String?  @unique
+  createdAt    DateTime @default(now())
+
+  sites    Site[]
+  sessions Session[]
+  events   Event[]
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  expiresAt DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
 model Site {
   id        String   @id @default(uuid())
   name      String
-  city      String
-  status    STATUS
+  status    STATUS   @default(STABLE)
   createdAt DateTime @default(now())
-  events    Event[]
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  events Event[]
+
+  @@index([userId])
 }
 
 model Event {
   id        String   @id @default(uuid())
   siteId    String
+  userId    String
   type      STATUS
   message   String
   createdAt DateTime @default(now())
-  site      Site     @relation(fields: [siteId], references: [id], onDelete: Cascade)
+
+  site Site @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([siteId])
+  @@index([userId])
 }
