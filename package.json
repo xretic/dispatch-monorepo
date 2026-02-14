@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-     "dev": "nx run-many --target=serve --projects=api,web --parallel"
+    "dev": "nx run-many --target=serve --projects=api,web --parallel"
   },
   "private": true,
   "devDependencies": {
@@ -45,6 +45,7 @@
     "jsdom": "^27.1.0",
     "nx": "22.5.0",
     "prettier": "~3.6.2",
+    "prettier-plugin-organize-attributes": "^1.0.0",
     "ts-jest": "^29.4.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
