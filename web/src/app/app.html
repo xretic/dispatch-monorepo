@@ -1,2 +1,35 @@
-<app-header />
-<router-outlet></router-outlet>
+<mat-sidenav-container class="layout">
+  <mat-sidenav #drawer class="mobile-nav" mode="over">
+    <nav>
+      <a (click)="drawer.close()" routerLink="/">
+        <mat-icon
+          class="icon"
+          fontSet="material-symbols-outlined"
+        >
+          home
+        </mat-icon>
+        Home</a>
+      <a (click)="drawer.close()" routerLink="/dashboard">
+        <mat-icon
+          class="icon"
+          fontSet="material-symbols-outlined"
+        >
+          bubble_chart
+        </mat-icon>
+        Dashboard</a>
+      <a (click)="drawer.close()" routerLink="/profile">
+        <mat-icon
+          class="icon"
+          fontSet="material-symbols-outlined"
+        >
+          account_circle
+        </mat-icon>
+        Profile</a>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (menuClick)="drawer.toggle()" [isMobile]="isMobile()"></app-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

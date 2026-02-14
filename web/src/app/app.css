@@ -1,0 +1,64 @@
+.layout {
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+.mobile-nav {
+  width: 280px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav nav {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 6px;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  transition: background-color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+  opacity: 0.92;
+}
+
+.mobile-nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.mobile-nav a:active {
+  transform: translateX(0);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.mobile-nav a.active,
+.mobile-nav a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+:host ::ng-deep .mobile-nav .mat-drawer-inner-container {
+  overflow: hidden;
+}
+
+:host ::ng-deep .mobile-nav .mat-mdc-focus-indicator {
+  border-radius: 12px;
+}
+
+.icon {
+  color: var(--text-color);
+  margin-right: 6px;
+}

@@ -1,27 +1,38 @@
 <header class="header">
     <div class="brand">
-        <img class="logo" src="/images/Icon.png" alt="icon" />
+        @if (isMobile) {
+        <button (click)="menuClick.emit()" class="menu-btn" mat-icon-button>
+            <mat-icon fontSet="material-symbols-outlined">menu</mat-icon>
+        </button>
+        }
+
+        <img alt="icon" class="logo" src="/images/Icon.png" />
         <span class="brand-name">Dispatch</span>
     </div>
 
+    @if (!isMobile) {
     <nav class="nav">
-        <a routerLink="/" routerLinkActive="active"> Home </a>
+        <a [routerLinkActiveOptions]="{ exact: true }" routerLink="/" routerLinkActive="active">
+            Home
+        </a>
 
         <a routerLink="/dashboard" routerLinkActive="active"> Dashboard </a>
 
         <a routerLink="/profile" routerLinkActive="active"> Profile </a>
     </nav>
 
+    }
+
     <div class="auth">
-        <a routerLink="/login" class="btn btn-primary"> Login </a>
-        <a routerLink="/register" class="btn btn-outline"> Register </a>
+        <a class="btn btn-primary" routerLink="/login"> Login </a>
+        <a class="btn btn-outline" routerLink="/register"> Register </a>
 
         <!-- temporary toggle, we'll do a footer for that later -->
         <mat-icon
             (click)="theme.toggle()"
-            fontSet="material-symbols-outlined"
-            class="theme-icon"
             [class.dark]="theme.isDark()"
+            class="theme-icon"
+            fontSet="material-symbols-outlined"
         >
             {{ theme.isDark() ? 'light_mode' : 'dark_mode' }}
         </mat-icon>

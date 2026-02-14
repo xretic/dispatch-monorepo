@@ -31,11 +31,15 @@
     --theme-toggle-color: #fae04b;
 }
 
-body {
+html, body {
     background: var(--bg-color);
     color: var(--text-color);
     margin: 0;
     transition:
         background 0.3s ease,
         color 0.3s ease;
+}
+
+mat-sidenav-container {
+  height: 100vh;
 }

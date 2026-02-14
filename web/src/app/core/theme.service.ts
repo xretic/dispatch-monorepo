@@ -1,14 +1,12 @@
-import { Injectable, signal, effect } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-    private storageKey = 'theme';
-
     isDark = signal(false);
+    private storageKey = 'theme';
 
     constructor() {
         const saved = localStorage.getItem(this.storageKey);
-
         if (saved === 'dark') {
             this.isDark.set(true);
             document.body.classList.add('dark-theme');
