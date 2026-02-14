@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Header } from './layout/header/header';
 
@@ -8,11 +8,4 @@ import { Header } from './layout/header/header';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  count = signal(0);
-  protected description = 'test';
-
-  increment() {
-    this.count.set(this.count() + 1);
-  }
-}
+export class App {}

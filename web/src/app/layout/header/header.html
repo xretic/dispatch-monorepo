@@ -1,12 +1,30 @@
 <header class="header">
-  <h1>Dashboard</h1>
-  <div>
-    <nav>
-      <button routerLink="/">Home</button>
-      <button routerLink="/dashboard">Dashboard</button>
-    </nav>
+  <div class="brand">
+    <img class="logo" src="/images/Icon.png" alt="icon"/>
+    <span class="brand-name">Dispatch</span>
   </div>
-  <div>
-    log
+
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" >
+      Home
+    </a>
+
+    <a routerLink="/dashboard" routerLinkActive="active">
+      Dashboard
+    </a>
+
+    <a routerLink="/profile" routerLinkActive="active">
+      Profile
+    </a>
+  </nav>
+
+  <div class="auth">
+    <a routerLink="/login" class="btn btn-primary">
+      Login
+    </a>
+
+    <a routerLink="/register" class="btn btn-outline">
+      Register
+    </a>
   </div>
 </header>
