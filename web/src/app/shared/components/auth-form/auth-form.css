@@ -1,0 +1,98 @@
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: var(--header-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  color: var(--text-color);
+}
+
+.subtitle {
+  color: var(--soft-color);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.actions {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actions:hover {
+  background-color: rgba(var(--hover-color), 0.9);
+}
+
+.separator {
+  margin: 20px;
+  color: var(--soft-color);
+}
+
+.social-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #fff;
+}
+
+.social-btn.google {
+  background-color: #fcfcfc;
+  color: #000;
+}
+
+
+.social-btn.github {
+  background-color: #333;
+}
+
+.register {
+  color: var( --soft-color);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+}

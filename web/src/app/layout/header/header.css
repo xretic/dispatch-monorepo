@@ -6,11 +6,6 @@
     justify-content: space-between;
     background: var(--header-bg);
     border-bottom: 1px solid var(--border-color);
-    font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        sans-serif;
 }
 
 .brand {
