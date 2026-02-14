@@ -9,7 +9,7 @@ export class UserService {
     async user(id: string): Promise<User | null> {
         return this.prisma.user.findUnique({
             where: {
-                id: id,
+                id,
             },
         });
     }
