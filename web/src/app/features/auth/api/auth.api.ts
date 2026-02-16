@@ -7,7 +7,7 @@ export type User = { id: string; email: string; username: string; avatarUrl: str
 @Injectable({ providedIn: 'root' })
 export class AuthApi {
     private http = inject(HttpClient);
-    private base = 'http://localhost:3200/api';
+    private base = 'http://localhost:3000/api';
     private _user$ = new BehaviorSubject<User | null>(null);
     user$ = this._user$.asObservable();
 
