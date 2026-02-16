@@ -36,7 +36,11 @@ model Session {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  createdAt DateTime  @default(now())
+  revokedAt DateTime?
+
   @@index([userId])
+  @@index([expiresAt])
 }
 
 model Site {

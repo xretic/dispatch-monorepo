@@ -1,38 +1,41 @@
-<form class="login-form">
+<form (ngSubmit)="submit()" [formGroup]="form" class="login-form">
   <div class="header">
-    <h3 class="title">{{mode === 'login' ? 'Login' : 'Register'}}</h3>
+    <h3 class="title">{{ mode === 'login' ? 'Login' : 'Register' }}</h3>
 
     @if (mode === 'login') {
       <p class="subtitle">Sign-up to continue</p>
     }
   </div>
 
-
   <div class="fields">
-    <input class="input" placeholder="Email"/>
-    <input class="input" placeholder="Password" type="password"/>
-    @if(mode === 'register') {
-      <input class="input" placeholder="Confirm Password" type="password"/>
+    @if (mode === 'register') {
+      <input class="input" formControlName="username" placeholder="Username" />
     }
 
+    <input class="input" formControlName="email" placeholder="Email" />
+    <input class="input" formControlName="password" placeholder="Password" type="password" />
+
+    @if (mode === 'register') {
+      <input class="input" formControlName="confirm" placeholder="Confirm Password" type="password" />
+    }
   </div>
 
-
-    <button  class="actions">
-      {{ mode === 'login' ? 'Login' : 'Register' }}
-    </button>
+  <button class="actions" type="submit">
+    {{ mode === 'login' ? 'Login' : 'Register' }}
+  </button>
 
   <p class="separator">or</p>
   <div>
-    <button class="social-btn google">
+    <button class="social-btn google" type="button">
       <img alt="google" height="20" src="/images/google.png" width="20" />
       Continue with Google
     </button>
-    <button class="social-btn github">
-      <img alt="google" height="20" src="/images/github.png" width="20" />
+    <button class="social-btn github" type="button">
+      <img alt="github" height="20" src="/images/github.png" width="20" />
       Continue with GitHub
     </button>
   </div>
+
   @if (mode === 'login') {
     <p>Dont have an account?</p>
     <a class="register" routerLink="/register">Register here</a>
