@@ -23,9 +23,15 @@
 
     }
 
+
+
     <div class="auth">
-        <a class="btn btn-primary" routerLink="/login"> Login </a>
-        <a class="btn btn-outline" routerLink="/register"> Register </a>
+      @if (user$ | async; as user) {
+          <button (click)="onLogout()" class="btn btn-primary">Logout</button>
+        }@else {
+          <a class="btn btn-primary" routerLink="/login">Login</a>
+          <a class="btn btn-outline" routerLink="/register">Register</a>
+      }
 
         <!-- temporary toggle, we'll do a footer for that later -->
         <mat-icon
